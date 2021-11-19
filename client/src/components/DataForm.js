@@ -50,10 +50,7 @@ function DataForm() {
                 code: newUrl[1]
             };
 
-            console.log("Request data je: ", requestData);
-
             axiosInstance(proxyUrl).post("/authenticate", requestData).then((res) => {
-                console.log("Odgovor je: ", res.data);
                 const storeData = {
                     logged: true,
                     loggedUser: {
