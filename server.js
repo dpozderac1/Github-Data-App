@@ -2,12 +2,13 @@ const express = require("express");
 const path = require('path');
 const FormData = require("form-data");
 const axios = require('axios');
+require('dotenv').config();
 
 const app = express();
 
-const client_id = process.env.REACT_APP_CLIENT_ID;
-const client_secret = process.env.REACT_APP_CLIENT_SECRET;
-const redirect_uri = process.env.REACT_APP_REDIRECT_URI;
+const client_id = process.env.CLIENT_ID;
+const client_secret = process.env.CLIENT_SECRET;
+const redirect_uri = process.env.REDIRECT_URI;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
