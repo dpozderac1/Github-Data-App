@@ -7,7 +7,7 @@ const app = express();
 
 const client_id = "4b4a3783ee944a9e46c7";
 const client_secret = "375cbef7f9906e4caa23e1ade5a75de3a630a4a7";
-const redirect_uri = "https://dpozderac1.github.io/Github-Data-App/data";
+const redirect_uri = "https://intense-forest-73221.herokuapp.com/data";
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

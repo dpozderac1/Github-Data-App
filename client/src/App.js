@@ -12,7 +12,7 @@ const { Header, Content } = Layout;
 
 function App() {
   return (
-    <Router basename="/Github-Data-App">
+    <Router>
       <Layout
         style={{
           minHeight: "100vh",
