@@ -3,10 +3,14 @@ import { USER_IS_LOGGED_IN, USER_IS_LOGGED_OUT } from "./actions/action-types/ac
 export const initState = {
     logged: JSON.parse(localStorage.getItem("logged")) || false,
     loggedUser: JSON.parse(localStorage.getItem("loggedUser")) || null,
-    clientId: "4b4a3783ee944a9e46c7",
-    redirectUri: "http://localhost:3000/data",
-    proxyUrl: "http://localhost:5000",
+    clientId: process.env.REACT_APP_CLIENT_ID,
+    redirectUri: process.env.REACT_APP_REDIRECT_URI,
+    proxyUrl: process.env.REACT_APP_PROXY_URL,
 }
+
+/*clientId: "4b4a3783ee944a9e46c7",
+    redirectUri: "https://dpozderac1.github.io/Github-Data-App/data",
+    proxyUrl: "http://localhost:5000" */
 
 export default function (state = initState, action) {
     switch (action.type) {

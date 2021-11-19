@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require('path');
 const FormData = require("form-data");
 const axios = require('axios');
 
@@ -6,10 +7,13 @@ const app = express();
 
 const client_id = "4b4a3783ee944a9e46c7";
 const client_secret = "375cbef7f9906e4caa23e1ade5a75de3a630a4a7";
-const redirect_uri = "http://localhost:3030/data";
+const redirect_uri = "https://dpozderac1.github.io/Github-Data-App/data";
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+const buildPath = path.join(__dirname, '..', 'build');
+app.use(express.static(buildPath));
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -65,5 +69,14 @@ app.post("/authenticate", (req, response) => {
         });
 });
 
-const PORT = 5000;
+app.get('/proba', (req, res) => {
+    res.json({ "message": "Uspjesno!" });
+    console.log(`Sent passwords`);
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '../build/index.html'));
+});
+
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));

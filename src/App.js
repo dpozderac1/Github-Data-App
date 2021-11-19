@@ -4,18 +4,15 @@ import 'antd/dist/antd.css';
 import './index.css';
 import DataForm from './components/DataForm';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { createBrowserHistory } from "history";
 import PageHeader from "./components/PageHeader";
 
 import { Layout } from 'antd';
 
 const { Header, Content } = Layout;
 
-const history = createBrowserHistory();
-
 function App() {
   return (
-    <Router history={history}>
+    <Router basename="/Github-Data-App">
       <Layout
         style={{
           minHeight: "100vh",

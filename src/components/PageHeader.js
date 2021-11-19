@@ -16,6 +16,7 @@ function PageHeader() {
 
     return (
         <Row style={{ display: "flex", alignItems: "center", lineHeight: "80px" }}>
+            {console.log("LOKACIJA je: ", window.location.href)}
             <Col span="20" style={{ height: "80px" }}>
                 <h1 style={{ color: "white", margin: "0px" }}>GitHub Data App</h1>
             </Col>
